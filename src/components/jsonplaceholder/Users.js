@@ -12,9 +12,7 @@ const Users = () => {
         userService.getAll().then(value => value.data).then(value => setUsers([...value]))
     },[])
 
-    useEffect(()=>{
 
-    },[])
 
     return (
         <div>
