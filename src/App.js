@@ -1,5 +1,5 @@
 import {Comments, Posts, Spaceships, Users} from "./components";
-import {UsersPosts} from "./components/usersPosts/UsersPosts";
+
 
 
 const App = () => {
@@ -9,7 +9,6 @@ const App = () => {
             {/*<Users/>*/}
             {/*<Comments/>*/}
             {/*<Spaceships/>*/}
-            <UsersPosts/>
         </div>
     );
 };
