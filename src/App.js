@@ -1,5 +1,6 @@
-import {Comments, Posts, Users} from "./components";
-import {Spaceships} from "./components/spaceX/Spaceships";
+import {Comments, Posts, Spaceships, Users} from "./components";
+import {UsersPosts} from "./components/usersPosts/UsersPosts";
+
 
 const App = () => {
     return (
@@ -7,7 +8,8 @@ const App = () => {
             {/*<Posts/>*/}
             {/*<Users/>*/}
             {/*<Comments/>*/}
-            <Spaceships/>
+            {/*<Spaceships/>*/}
+            <UsersPosts/>
         </div>
     );
 };
