@@ -1,2 +1,6 @@
 export * from './jsonplaceholder/posts/Posts'
 export * from './jsonplaceholder/posts/Post'
+export * from './jsonplaceholder/users/User'
+export * from './jsonplaceholder/users/Users'
+export * from './jsonplaceholder/comments/Comments'
+export * from './jsonplaceholder/comments/Comment'

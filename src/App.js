@@ -1,13 +1,13 @@
-import {Posts} from "./components";
-import {Users} from "./components/jsonplaceholder/users/Users";
-import {Comments} from "./components/jsonplaceholder/comments/Comments";
+import {Comments, Posts, Users} from "./components";
+import {Spaceships} from "./components/spaceX/Spaceships";
 
 const App = () => {
     return (
         <div>
             {/*<Posts/>*/}
             {/*<Users/>*/}
-            <Comments/>
+            {/*<Comments/>*/}
+            <Spaceships/>
         </div>
     );
 };
