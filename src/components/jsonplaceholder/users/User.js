@@ -1,12 +1,12 @@
 import React from "react";
 
-import './User.css'
+import '../posts/Post.css'
 
 const User = ({user, setUserDetails}) => {
     const {id, name} = user
     return (
         <div className='item'>
-            <div>{id} - {name}</div>
+            {id} - {name}
             <button onClick={()=>setUserDetails(user)}>Get Info</button>
         </div>
     );

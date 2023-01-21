@@ -1,22 +1,21 @@
 import React, {useEffect, useState} from "react";
 
-import './User.css'
+import '../posts/Post.css'
+import {userService} from "../../../services/userService";
 import {User} from "./User";
-import {userService} from "../../services/userService";
 
 const Users = () => {
+
     const [users, setUsers] = useState([]);
     const [userDetails, setUserDetails] = useState(null);
 
     useEffect(()=>{
-        userService.getAll().then(value => value.data).then(value => setUsers([...value]))
+        userService.getUsers().then(value => value.data).then(value => setUsers([...value]))
     },[])
-
-
 
     return (
         <div>
-            <div className='item'>{userDetails && <div>{userDetails.id} - {userDetails.username} - {userDetails.email}</div>}</div>
+            <div className='item'>{userDetails && <div>{userDetails.id} - {userDetails.name} - {userDetails.username} - {userDetails.email}</div>}</div>
 
             <hr/>
 

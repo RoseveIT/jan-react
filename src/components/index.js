@@ -1,2 +1,2 @@
-export * from './jsonplaceholder/Users'
-export * from './jsonplaceholder/User'
+export * from './jsonplaceholder/posts/Posts'
+export * from './jsonplaceholder/posts/Post'

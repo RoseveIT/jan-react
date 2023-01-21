@@ -1,8 +1,11 @@
 import {axiosService} from "./axiosService";
 
 const userService = {
-    getAll:()=> axiosService.get('/users'),
-    getById:(id)=> axiosService.get(`/users/${id}`)
+    getPosts:()=> axiosService.get('/posts'),
+    getUsers:()=> axiosService.get('/users'),
+    getComments:()=> axiosService.get('/comments'),
+    getById:(id)=> axiosService.get(`/users/${id}`),
+
 }
 
 export {userService}
