@@ -7,7 +7,7 @@ const Spaceships = () => {
     const [spaceships, setSpaceships] = useState([]);
 
     useEffect(()=>{
-        shipService.getShips().then(value => value.data).then(value => setSpaceships([...value]))
+        shipService.getShips().then(value => value.data).then(value => ))
     },[])
 
     return (
