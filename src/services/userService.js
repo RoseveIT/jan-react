@@ -4,7 +4,8 @@ const userService = {
     getPosts:()=> axiosService.get('/posts'),
     getUsers:()=> axiosService.get('/users'),
     getComments:()=> axiosService.get('/comments'),
-    getPostIdUser:(id)=> axiosService.get(`https://jsonplaceholder.typicode.com/posts/${id}`),
+    // getPostIdUser:(userId)=> axiosService.get(`/posts/?userId=${userId}`),
+    getByUserId:(userId)=> axiosService.get(`/posts`, {params:{userId:userId}}),
 }
 
 const shipService ={
