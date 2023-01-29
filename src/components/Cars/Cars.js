@@ -2,10 +2,10 @@ import React from "react";
 
 import {Car} from "../Car/Car";
 
-const Cars = ({cars, setUpdateCar}) => {
+const Cars = ({cars, setUpdateCar, setCars}) => {
     return (
         <div>
-            {cars.map(car=><Car key={car.id} car={car} setUpdateCar={setUpdateCar}/>)}
+            {cars.map(car=><Car key={car.id} car={car} setUpdateCar={setUpdateCar} setCars={setCars}/>)}
         </div>
     );
 };

@@ -21,6 +21,14 @@ const CarsForm = ({setCars, updateCar}) => {
         reset()
     }
 
+    const update = async (car) =>{
+        const {data} = await carService.updateById(updateCar.id, car)
+        if (Object.keys(data).length){
+            const {data} = await carService.getAll()
+            setCars(data)
+        }
+    }
+
     return (
         // <form onSubmit={handleSubmit(submit)}>
         //     <input type="text" placeholder={'brand'} {...register('brand', {
@@ -45,7 +53,7 @@ const CarsForm = ({setCars, updateCar}) => {
         //     {errors.year && <span>{errors.year.message}</span>}
         //     <button>Save</button>
         // </form>
-        <form onSubmit={handleSubmit(submit)}>
+        <form onSubmit={handleSubmit(updateCar?update:submit)}>
             <input type="text" placeholder={'brand'} {...register('brand')}/>
             {errors.brand && <div>{errors.brand.message}</div>}
             <input type="text" placeholder={'price'} {...register('price')}/>
