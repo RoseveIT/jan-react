@@ -1,13 +1,23 @@
 import {Cars, CarsForm} from "./components";
+import {useEffect, useState} from "react";
+import {carService} from "./services";
 
 const App = () => {
+
+    const [cars, setCars] = useState([]);
+    const [updateCar, setUpdateCar] = useState(null);
+
+    useEffect(()=>{
+        carService.getAll().then(({data})=>setCars([...data]))
+    },[])
+
     return (
         <div>
-          <CarsForm/>
+          <CarsForm setCars={setCars} updateCar={updateCar}/>
 
             <hr/>
 
-            <Cars/>
+            <Cars cars={cars} setUpdateCar={setUpdateCar}/>
         </div>
     );
 };
