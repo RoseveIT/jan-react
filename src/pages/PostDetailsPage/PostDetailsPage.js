@@ -1,5 +1,5 @@
 import React from "react";
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 
 import {PostDetails} from "../../components";
 
@@ -7,9 +7,11 @@ const PostDetailsPage = () => {
 
     const {postId} = useParams();
 
+    const {state} = useLocation();
+
     return (
         <div>
-            <PostDetails postId={postId}/>
+            <PostDetails postId={postId} state={state}/>
         </div>
     );
 };

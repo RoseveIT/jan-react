@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from "react";
 import {postsService} from "../../services";
 
-const PostDetails = ({postId}) => {
+const PostDetails = ({postId, state}) => {
 
     const [post, setPost] = useState(null);
 
     useEffect(()=>{
-        postsService.getById(postId).then(({data})=>setPost(data))
-    },[postId])
+        if (state){
+            setPost({...state})
+        }else{
+            postsService.getById(postId).then(({data})=>setPost(data))
+        }
+    },[postId, state])
 
     return (
         <div>
