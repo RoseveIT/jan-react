@@ -1,6 +1,6 @@
 import {useRef} from "react";
-import {useAuthContext} from "../../hooks/useAuthContext";
 import {useLocation, useNavigate} from "react-router-dom";
+import {useAuthContext} from "../../hooks/useAuthContext";
 
 const LoginPage = () => {
     const username = useRef();
@@ -15,7 +15,7 @@ const LoginPage = () => {
     return (
         <div>
             <input type="text" placeholder={'username'} ref={username}/>
-            <button onClick={login}>login</button>
+            <button onClick={()=>login()}>login</button>
         </div>
     );
 };
