@@ -1,10 +1,14 @@
 import React from "react";
+import {Outlet} from "react-router-dom";
+
 import {Posts} from "../../components";
+import css from './PostPage.module.css'
 
 const PostsPage = () => {
     return (
-        <div>
+        <div className={css.PostsPage}>
             <Posts/>
+            <Outlet/>
         </div>
     );
 };
