@@ -10,13 +10,13 @@ const App = () => {
     return (
         <div>
             <div>
-                <button onClick={()=>navigate('/users')}>users</button>
-                <button onClick={()=>navigate('/cars')}>cars</button>
+                <button onClick={()=>navigate('users')}>users</button>
+                <button onClick={()=>navigate('cars')}>cars</button>
             </div>
             <hr/>
             <Routes>
-                <Route path={'/users'} element={<UserPage/>}/>
-                <Route path={'/cars'} element={<CarPage/>}/>
+                <Route path={'users'} element={<UserPage/>}/>
+                <Route path={'cars'} element={<CarPage/>}/>
             </Routes>
         </div>
     );

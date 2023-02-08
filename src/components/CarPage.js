@@ -1,9 +1,13 @@
 import React from "react";
+import {CarForm} from "./CarForm";
+import {Cars} from "./Cars";
 
 const CarPage = () => {
     return (
         <div>
-            car
+            <CarForm/>
+            <hr/>
+            <Cars/>
         </div>
     );
 };
