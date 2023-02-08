@@ -5,7 +5,9 @@ import {useAppReducer} from "../hooks/useAppReducer";
 import {userActions} from "../reducers/userReducer";
 
 const UserForm = () => {
+
     const {register, reset, handleSubmit} = useForm();
+
     const [, dispatch] = useAppReducer(value=>value.userReducer);
     const save = (user) => {
         dispatch(userActions.ADD(user))

@@ -19,6 +19,8 @@ const myUserReducer = (state, action) =>{
             const index = state.findIndex(value => value.id === action.payload);
             state.splice(index, 1)
             return [...state]
+        default:
+            return [...state]
     }
 }
 
