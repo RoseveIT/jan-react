@@ -2,13 +2,14 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
 
-import {carValidator} from "../../validator";
 import {carActions} from "../../redux";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {carValidator} from "../../validator";
 
 
 const Form = () => {
 
-    const {register, handleSubmit, reset, formState:{isValid}} = useForm({mode:'all', resolver:carValidator});
+    const {register, handleSubmit, reset, formState:{errors, isValid}} = useForm({mode:'all', resolver:joiResolver(carValidator)});
 
     const dispatch = useDispatch();
 

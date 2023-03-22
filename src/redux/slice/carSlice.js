@@ -3,7 +3,7 @@ import {carService} from "../../services";
 
 const initialState = {
     cars:[],
-    setUpdateCar:null,
+    carForUpdate:null,
     errors: null,
     loading: null
 }
@@ -23,9 +23,9 @@ const getAll = createAsyncThunk(
 
 const create = createAsyncThunk(
     'carSlice/create',
-    async (data, thunkAPI)=>{
+    async ({car}, thunkAPI)=>{
         try {
-            await carService.create(data)
+            await carService.create(car)
             thunkAPI.dispatch(getAll())
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
@@ -67,6 +67,5 @@ const carActions ={
 
 export {
     carReducer,
-    carActions,
-    carSlice
+    carActions
 }
