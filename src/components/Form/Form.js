@@ -3,19 +3,19 @@ import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
 
 import {carValidator} from "../../validator";
-import {carAction} from "../../redux";
+import {carActions} from "../../redux";
+
 
 const Form = () => {
 
-    const {register, handleSubmit, reset, setValue, formState:{isValid}} = useForm({mode:'all', resolver:carValidator});
+    const {register, handleSubmit, reset, formState:{isValid}} = useForm({mode:'all', resolver:carValidator});
 
     const dispatch = useDispatch();
 
     const save = async (car) => {
-        await dispatch(carAction.create({car}))
+        await dispatch(carActions.create({car}))
         reset()
     }
-
     return (
         <form onSubmit={handleSubmit(save)}>
             <input type='text' placeholder={'brand'} {...register('brand')}/>

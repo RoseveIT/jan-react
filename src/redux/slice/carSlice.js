@@ -60,13 +60,13 @@ const carSlice = createSlice({
 
 const {reducer:carReducer} = carSlice
 
-const carAction ={
+const carActions ={
     getAll,
     create
 }
 
 export {
     carReducer,
-    carAction,
+    carActions,
     carSlice
 }

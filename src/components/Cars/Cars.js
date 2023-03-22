@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {carAction} from "../../redux";
+import {carActions} from "../../redux";
 import {Car} from "../Car/Car";
 
 const Cars = () => {
@@ -10,7 +10,7 @@ const Cars = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(carAction.getAll())
+        dispatch(carActions.getAll())
     },[dispatch])
 
     return (
