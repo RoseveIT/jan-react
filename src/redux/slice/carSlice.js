@@ -13,7 +13,8 @@ const getAll = createAsyncThunk(
     'carSlice/getAll',
     async (_, thunkAPI)=>{
         try {
-            await carService.getAll()
+            const {data} = await carService.getAll();
+            return data
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
