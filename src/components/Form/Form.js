@@ -1,12 +1,15 @@
 import React from "react";
 import {useForm} from "react-hook-form";
+import {carValidator} from "../../validator";
 
 const Form = () => {
-    useForm({mode:'all', resolver:})
+
+    const {register, handleSubmit, reset, setValue, formState:{isValid}} = useForm({mode:'all', resolver:carValidator});
+
     return (
-        <div>
-            
-        </div>
+        <form>
+            <input  />
+        </form>
     );
 };
 
