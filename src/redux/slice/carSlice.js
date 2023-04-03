@@ -33,6 +33,18 @@ const create = createAsyncThunk(
     }
 )
 
+const deleteById = createAsyncThunk(
+    'carSlice/deleteById',
+    async ({id}, thunkAPI)=>{
+        try {
+            await carService.deleteById(id)
+            thunkAPI.dispatch(getAll())
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+);
+
 // const updateById = createAsyncThunk(
 //     'carSlice/updateById',
 //     async ({id, car}, thunkAPI)=>{
@@ -62,7 +74,8 @@ const {reducer:carReducer} = carSlice
 
 const carActions ={
     getAll,
-    create
+    create,
+    deleteById
 }
 
 export {
