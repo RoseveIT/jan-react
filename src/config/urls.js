@@ -5,7 +5,7 @@ const cars = '/cars'
 const urls = {
     cars:{
         cars,
-        getById:(id)=>(`${cars}$/${id}`)
+        getById:(id)=>(`${cars}/${id}`)
     }
 }
 
